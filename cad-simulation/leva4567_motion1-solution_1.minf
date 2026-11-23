@@ -1,0 +1,1759 @@
+Input file: C:\Users\Santi\OneDrive\Escritorio\Mecanismos piezas\leva4567_motion1-solution_1.minp
+
+Solver running in Simcenter Mode
+
+
+Solver: Simcenter Motion Version 12 (12.0) Aug 31 2017 16:04:02 Intel Release 64bit
+Interface: R12P27_rc1 2017-09-04
+Hostname: SANTIAGOCADAVID
+OS Type: Windows
+Release: 6.2
+Version: Build 9200
+Machine: 8664
+Integer size:    5000000
+Real size:    5000000
+Mcheps: 0.22204460492503E-15
+LMSMOTGGL is active
+
+[1482]
+NOTE:  The system data element specifies inconsistent units:
+  LENGTH.UNIT = MILLIMETER
+  MASS.UNIT   = KILOGRAM
+  FORCE.UNIT  = NEWTON
+Force and mass values are converted to a consistent set of units for
+solution and then converted back to the specified units before being
+reported.
+
+[1296]
+Warning (dynamic data element):  When "INTERPOLATED" is selected for the
+print method, the print frequency feature cannot be used.  PRINT.Freq is
+being reset to zero (disabled) and execution is continuing.
+ The GGL formulation is turned on.
+
+[1276]
+Warning:  In the dynamic data element, the step size is larger
+than the print interval specified in the system data element.  The step
+size is being reset so that it equals the print interval.
+  PRint.interval = 0.10000000000000E-02
+  old MAX.int.step = 1.0000000000000E-02
+  new MAX.int.step = 0.10000000000000E-02
+NOTE:  The Time Series Global Output element will reduce PRint.interval
+       when the Output Rate variable is set to two or more.
+
+License Server is [27800@localhost]
+
+Features requiring licenses
+-----------------------
+sc_motion_solver "Motion Solver"
+
+
+[1134]
+Warning:  Prior to assembly the number of constraints, drivers and
+initial conditions is not equal to the number of generalized
+coordinates.  The assembly algorithm will be executed but the
+result will represent one of several possible solutions.
+Number of constraints, drivers, I.C's =                   33
+Number of generalized coordinates     =                   31
+
+Results achieved by the model assembly process with drivers:
+
+  Number of function evaluations =     1
+  Maximum constraint violation   =   0.353665E-03
+
+ Element: BASELEVA
+    Coordinate    New Value     Original Value  Difference
+    X              0.0000         0.0000         0.0000    
+    Y              0.0000         0.0000         0.0000    
+    Z              0.0000         0.0000         0.0000    
+    E0             0.0000         0.0000         0.0000    
+    E1            0.70711        0.70711         0.0000    
+    E2            0.70711        0.70711         0.0000    
+    E3             0.0000         0.0000         0.0000    
+
+ Element: LEVA_DE_DISCO_1
+    Coordinate    New Value     Original Value  Difference
+    X              28.765         28.765         0.0000    
+    Y            -0.41381E-03   -0.41381E-03     0.0000    
+    Z             -7.7144        -7.7144         0.0000    
+    E0           -0.92495E-01   -0.92495E-01     0.0000    
+    E1            0.70103        0.70103         0.0000    
+    E2            0.70103        0.70103         0.0000    
+    E3           -0.92534E-01   -0.92534E-01     0.0000    
+
+ Element: SEGUIDOR
+    Coordinate    New Value     Original Value  Difference
+    X             -5.0666        -5.0666         0.0000    
+    Y              0.0000         0.0000         0.0000    
+    Z              65.121         65.121         0.0000    
+    E0            0.99762        0.99762         0.0000    
+    E1             0.0000         0.0000         0.0000    
+    E2           -0.68953E-01   -0.68953E-01     0.0000    
+    E3             0.0000         0.0000         0.0000    
+
+ Element: the_ground
+    Coordinate    New Value     Original Value  Difference
+    X              0.0000         0.0000         0.0000    
+    Y              0.0000         0.0000         0.0000    
+    Z              0.0000         0.0000         0.0000    
+    E0             1.0000         1.0000         0.0000    
+    E1             0.0000         0.0000         0.0000    
+    E2             0.0000         0.0000         0.0000    
+    E3             0.0000         0.0000         0.0000    
+
+ Element: J004
+    Coordinate    New Value     Original Value  Difference
+    Rel.crd.1      304.00         304.00         0.0000    
+
+ Element: J004
+    Coordinate    New Value     Original Value  Difference
+    Rel.crd.2      62.815         62.815         0.0000    
+
+ Element: MOTION_J001_RZ
+    Coordinate    New Value     Original Value  Difference
+    Rel.angle    -0.11602E-13   -0.11602E-13     0.0000    
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 2) relative translation along Y axis of "Global coordinate system"
+
+
+The remaining constraints in which the redundant
+constraints are linearly dependent to are summarized as:
+
+Name: J001
+     constraint ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+     is linearly dependent to:
+
+     Name: J004
+        Constraint: (31) relative rotation in plane of common curve tangent  Factor:   0.9999    
+     Name: J002
+        Constraint: ( 6) relative rotation about Z axis of "BASELEVA/J002_j"  Factor:    1.000    
+
+Name: J001
+     constraint ( 2) relative translation along Y axis of "Global coordinate system"
+     is linearly dependent to:
+
+     Name: BASELEVA
+        Constraint: ( 8) Euler parameter normalization of "BASELEVA/BASELEVA_cm"  Factor:    2.000    
+     Name: LEVA_DE_DISCO_1
+        Constraint: ( 8) Euler parameter normalization of "LEVA_DE_DISCO_1/LEVA_DE_DISCO_1_cm"  Factor:  -0.3069    
+     Name: J001
+        Constraint: ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"  Factor:  -0.7143    
+     Name: J004
+        Constraint: ( 2) relative translation along Y axis of "Global coordinate system"  Factor:    1.000    
+     Name: J002
+        Constraint: ( 4) relative rotation about X axis of "BASELEVA/J002_j"  Factor:   0.2857    
+     Name: J002
+        Constraint: ( 2) relative translation along Y axis of "BASELEVA/J002_j"  Factor:   -1.000    
+ Using QR Initial Velocity Method
+
+[1286]
+Warning:  Initial conditions may not be sufficient (DAP2).
+Solution of initial velocities, using QR method:
+
+ Element: BASELEVA
+    Coordinate    Velocity
+    X            -0.115840E-13
+    Y             0.334513E-13
+    Z              0.00000    
+    E0             0.00000    
+    E1             0.00000    
+    E2             0.00000    
+    E3             0.00000    
+
+ Element: LEVA_DE_DISCO_1
+    Coordinate    Velocity
+    X              48.4708    
+    Y             0.440549E-11
+    Z              180.737    
+    E0             2.20235    
+    E1            0.290703    
+    E2            0.290583    
+    E3             2.20234    
+
+ Element: SEGUIDOR
+    Coordinate    Velocity
+    X             0.101089E-13
+    Y            -0.188067E-12
+    Z            -0.428290    
+    E0             0.00000    
+    E1             0.00000    
+    E2             0.00000    
+    E3             0.00000    
+
+ Element: the_ground
+    Coordinate    Velocity
+    X            -0.127430E-13
+    Y             0.336049E-13
+    Z              0.00000    
+    E0            0.245521E-13
+    E1             0.00000    
+    E2             0.00000    
+    E3             0.00000    
+
+ Element: J004
+    Coordinate    Velocity
+    Rel.crd.1      160.133    
+
+ Element: J004
+    Coordinate    Velocity
+    Rel.crd.2      3.05317    
+
+ Element: MOTION_J001_RZ
+    Coordinate    Velocity
+    Rel.angle      6.28319    
+
+Solution of velocities in local coordinates:
+
+ Element: BASELEVA
+    Coordinate    Velocity
+    X            -0.115840E-13
+    Y             0.334513E-13
+    Z              0.00000    
+    OMEGA_XL       0.00000    
+    OMEGA_YL       0.00000    
+    OMEGA_ZL       0.00000    
+
+ Element: LEVA_DE_DISCO_1
+    Coordinate    Velocity
+    X              48.4708    
+    Y             0.440549E-11
+    Z              180.737    
+    OMEGA_XL      -6.28319    
+    OMEGA_YL      0.142706E-04
+    OMEGA_ZL      0.342618E-03
+
+ Element: SEGUIDOR
+    Coordinate    Velocity
+    X             0.101089E-13
+    Y            -0.188067E-12
+    Z            -0.428290    
+    OMEGA_XL       0.00000    
+    OMEGA_YL       0.00000    
+    OMEGA_ZL       0.00000    
+
+ Element: the_ground
+    Coordinate    Velocity
+    X            -0.127430E-13
+    Y             0.336049E-13
+    Z              0.00000    
+    OMEGA_XL       0.00000    
+    OMEGA_YL       0.00000    
+    OMEGA_ZL       0.00000    
+
+Number of real data in the system     =     54655
+Number of integer data in the system  =     35993
+
+
+[1310]
+Warning:  Number of constraints is greater than or equal to the number
+of generalized coordinates.
+  Number of generalized coordinates =                   31
+  Number of constraints             =                   31
+
+Solution of accelerations in local coordinates:
+
+ Element: BASELEVA
+    Coordinate    Acceleration
+    X            -0.113816E-27
+    Y             0.150844E-28
+    Z              0.00000    
+    OMEGAD_XL      0.00000    
+    OMEGAD_YL      0.00000    
+    OMEGAD_ZL    -0.267699E-42
+
+ Element: LEVA_DE_DISCO_1
+    Coordinate    Acceleration
+    X             -1135.61    
+    Y            -0.248853E-10
+    Z              304.551    
+    OMEGAD_XL     0.177636E-14
+    OMEGAD_YL     0.262235E-12
+    OMEGAD_ZL     0.201431E-11
+
+ Element: SEGUIDOR
+    Coordinate    Acceleration
+    X            -0.113816E-27
+    Y             0.150844E-28
+    Z              66.3969    
+    OMEGAD_XL     0.368293E-43
+    OMEGAD_YL     0.659301E-74
+    OMEGAD_ZL     0.265154E-42
+
+ Element: the_ground
+    Coordinate    Acceleration
+    X              0.00000    
+    Y              0.00000    
+    Z              0.00000    
+    OMEGAD_XL      0.00000    
+    OMEGAD_YL      0.00000    
+    OMEGAD_ZL      0.00000    
+
+Total Number of Bodies             =    4
+
+Total Number of Degrees of Freedom =   27
+Number of Kinematic Constraints    =   27
+Number of Drivers                  =    1
+Number of Initial Conditions       =    0
+Number of Degrees of Freedom       =    0
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J002
+    Type:  Translational joint            ( 2) relative translation along Y axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J002
+    Type:  Translational joint            ( 2) relative translation along Y axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1027]
+Warning from Sparse matrix solution package.
+Matrix decomposition failed. Solver will recreate symbolic factorization
+and try decomposition of matrix again.
+  Warning flag            =     29
+  Current simulation time =   0.570000E-01
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1027]
+Warning from Sparse matrix solution package.
+Matrix decomposition failed. Solver will recreate symbolic factorization
+and try decomposition of matrix again.
+  Warning flag            =     35
+  Current simulation time =   0.124000
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 2) relative translation along Y axis of "BASELEVA/J002_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1010]
+Error found in subroutine MA30A.  Matrix is "numerically" singular.
+
+[1025]
+Error detected in model analysis:
+The matrix could not be properly decomposed.
+  Number of matrix nonzero entries =    243
+  Matrix dimension                 =     31
+  Current simulation time          =   0.460000
+
+[1010]
+Error found in subroutine MA30A.  Matrix is "numerically" singular.
+
+[1025]
+Error detected in model analysis:
+The matrix could not be properly decomposed.
+  Number of matrix nonzero entries =    243
+  Matrix dimension                 =     31
+  Current simulation time          =   0.460000
+
+[1010]
+Error found in subroutine MA30A.  Matrix is "numerically" singular.
+
+[1025]
+Error detected in model analysis:
+The matrix could not be properly decomposed.
+  Number of matrix nonzero entries =    243
+  Matrix dimension                 =     31
+  Current simulation time          =   0.459800
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1010]
+Error found in subroutine MA30A.  Matrix is "numerically" singular.
+
+[1025]
+Error detected in model analysis:
+The matrix could not be properly decomposed.
+  Number of matrix nonzero entries =    243
+  Matrix dimension                 =     31
+  Current simulation time          =   0.459461
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1010]
+Error found in subroutine MA30A.  Matrix is "numerically" singular.
+
+[1025]
+Error detected in model analysis:
+The matrix could not be properly decomposed.
+  Number of matrix nonzero entries =    243
+  Matrix dimension                 =     31
+  Current simulation time          =   0.459922
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1010]
+Error found in subroutine MA30A.  Matrix is "numerically" singular.
+
+[1025]
+Error detected in model analysis:
+The matrix could not be properly decomposed.
+  Number of matrix nonzero entries =    243
+  Matrix dimension                 =     31
+  Current simulation time          =   0.459553
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1010]
+Error found in subroutine MA30A.  Matrix is "numerically" singular.
+
+[1025]
+Error detected in model analysis:
+The matrix could not be properly decomposed.
+  Number of matrix nonzero entries =    243
+  Matrix dimension                 =     31
+  Current simulation time          =   0.459830
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 2) relative translation along Y axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 2) relative translation along Y axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 2) relative translation along Y axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 2) relative translation along Y axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 2) relative translation along Y axis of "BASELEVA/J002_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 2) relative translation along Y axis of "BASELEVA/J002_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 2) relative translation along Y axis of "BASELEVA/J002_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 2) relative translation along Y axis of "BASELEVA/J002_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 2) relative translation along Y axis of "BASELEVA/J002_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J004
+    Type:  Higher pair constraint         ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J004
+    Type:  Higher pair constraint         (31) relative rotation in plane of common curve tangent
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1027]
+Warning from Sparse matrix solution package.
+Matrix decomposition failed. Solver will recreate symbolic factorization
+and try decomposition of matrix again.
+  Warning flag            =     45
+  Current simulation time =   0.750000
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 2) relative translation along Y axis of "Global coordinate system"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 5) relative rotation about Y axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J001
+    Type:  Revolute joint                 ( 4) relative rotation about X axis of "LEVA_DE_DISCO_1/J001_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J001
+    Type:  Revolute joint                 ( 2) relative translation along Y axis of "Global coordinate system"
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+[1172]
+The following are redundant constraints and will be deleted from the system:
+.........Element Info.........  ..........Meaning..............
+
+ Name: J002
+    Type:  Translational joint            ( 6) relative rotation about Z axis of "BASELEVA/J002_j"
+
+ Name: J002
+    Type:  Translational joint            ( 2) relative translation along Y axis of "BASELEVA/J002_j"
+
+The number of symbolic factorizations of the Acceleration matrix =                    1
+
+[1349]
+  Final statistics (from DOPRI5) :
+  Number of computed steps            =                 1016
+  Number of accepted steps            =                 1015
+  Number of rejected steps            =                    1
+  Number of acceleration computations =                   13
+  Number of velocity computations     =                 1271
+  Number of position computations     =                 1022
+
+    Total elapsed CPU time:  0.8820000    
+    Total clock time:          0
